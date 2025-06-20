@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Mensajería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+
+    <!-- Sección de Registro -->
+    <div id="registro-section">
+        <h2>Registrarse</h2>
+        <input type="text" id="nombre" placeholder="Nombre"><br>
+        <input type="text" id="apellido" placeholder="Apellido"><br>
+        <input type="email" id="correo" placeholder="Correo"><br>
+        <input type="tel" id="telefono" placeholder="Teléfono"><br>
+        <input type="password" id="contrasena" placeholder="Contraseña"><br>
+        <button onclick="registrarUsuario()">Registrar</button>
+        <p>¿Ya tienes cuenta? <a href="javascript:void(0);" onclick="mostrarLogin()">Iniciar sesión</a></p>
+    </div>
+
+    <!-- Sección de Login -->
+ <div id="login-section">
+        <!-- Si no hay sesión activa, mostrar esto -->
+        <h2>Iniciar sesión</h2>
+        <form id="login-form">
+            <input type="text" id="identificador" placeholder="Correo o Teléfono" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" required>
+            <button type="button" onclick="loginUsuario()">Iniciar sesión</button>
+        </form>
+    </div>
+
+    <!-- Sección de Chat -->
+    <div id="chat" style="display:none;">
+        <div id="chat-header">
+            <h3>Bienvenido</h3>
+            <button onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <div id="contactos">
+            <h3>Contactos</h3>
+            <ul id="lista-usuarios"></ul>
+        </div>
+
+        <!-- Mensajes -->
+        <div id="mensajes-container">
+            <h3>Mensajes</h3>
+            <div id="mensajes"></div>
+            <input type="hidden" id="destinatario_id">
+            <textarea id="mensaje" placeholder="Escribe un mensaje..."></textarea><br>
+            <button onclick="enviarMensaje()">Enviar mensaje</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
