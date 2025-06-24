@@ -44,6 +44,7 @@ def registrar_usuario():
         return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
+        
 
 # --------------------- LOGIN --------------------------
 

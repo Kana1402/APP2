@@ -21,9 +21,10 @@ async function registrarUsuario() {
     alert(JSON.stringify(data));
 
     if (response.ok) {
-        mostrarLogin();
+        mostrarLogin(); 
     }
 }
+
 
 // --------------------------- LOGIN ----------------------------------
 
